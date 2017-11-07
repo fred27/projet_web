@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="header.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+	</head>
+    <body background="img/back-jeux.jpg" >	
+		
+		 <nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="accueil">MegaGame</a>
+			</div>
+			<ul class="nav navbar-nav" style='font-family: "Lucida Console", Monaco, monospace;'>
+			  <li><a href="accueil">Accueil</a></li>
+			  <li><a href="jeux_page1">Jeux</a></li>
+			  <li><a href="ajout_jeu">Ajouter</a></li>
+			  
+			   <li><a href="panier_jeux" style="margin-left: 630px;">Panier</a></li>
+			</ul>
+			<form class="navbar-form navbar-right">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Recherche">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" style="height: 34px;">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form> 
+		  </div>
+		</nav> 
+		
+		<div class="img-nba"><img src="img/fifa-ronaldo.png" class="img-responsive" alt="Cell" ></div>
+		<div class="rectangle-ajout"></div>
+
+		<div class="form-ajout">
+			<h1 class="form-ajout-text">Modifier un jeu</h1><hr>
+			<form action="verif_modif_jeu" method="post">
+				<div class="row">
+				<?php foreach ($jeux as $value){ ?>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Nom du jeu</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Categorie</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" id="nom" name="nom" value="<?php echo $value->Nom ?>"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" id="genre" name="genre" value="<?php echo $value->Categorie ?>"></div>
+				</div><br><br>
+				<div class="row">
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Editeur</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Date de sortie</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" id="editeur" name="editeur" value="<?php echo $value->Editeur ?>"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="date-sortie" value="<?php echo $value->Date ?>"></div>
+				</div><br><br>
+				<div class="row">
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Note</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Prix</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="note" value="<?php echo $value->Note ?>"></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="prix" value="<?php echo $value->Prix ?>"></div>
+				</div><br>
+				<label class="form-ajout-text" >Console</label>
+				<div class="checkbox">
+					<div class="row" style="margin-left: 0px;">
+						
+						<label class="checkbox-ajout"><input type="checkbox" name="ps4" <?php if($value->PS4 == 1){ echo 'checked';} ?> >PS4</label>
+						
+						<label class="checkbox-ajout"><input type="checkbox" name="xbox_one" <?php if($value->XBOX_ONE == 1){ echo 'checked';} ?> >XBOX ONE</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="switch" <?php if($value->SWITCH == 1){ echo 'checked';} ?> >SWITCH</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="pc" <?php if($value->PC == 1){ echo 'checked';} ?> >PC</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="xbox_360" <?php if($value->XBOX_360 == 1){ echo 'checked';} ?> >XBOX 360</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="ps3" <?php if($value->PS3 == 1){ echo 'checked';} ?> >PS3</label>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-xs-12"><label class="form-ajout-text" for="sel1">Jaquette du jeu</label></div>
+				  	<div class="col-xs-12"><input type="text" class="form-control" name="img" value="<?php echo $value->Image ?>"></div>
+			 	 </div><br>
+			 	 <input type="hidden" name="id" value="<?php echo $value->id ?>">
+				<button type="submit" class="btn btn-secondary btn-lg btn-block">Modifier</button>
+				<?php } ?>
+			</form>
+		</div> 
+
+	</body>
+</html>

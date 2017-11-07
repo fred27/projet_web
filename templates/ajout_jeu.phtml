@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="header.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+	</head>
+    <body background="img/back-jeux.jpg" >	
+		
+		 <nav class="navbar navbar-inverse navbar-fixed-top">
+		  <div class="container-fluid">
+			<div class="navbar-header">
+			  <a class="navbar-brand" href="accueil">MegaGame</a>
+			</div>
+			<ul class="nav navbar-nav" style='font-family: "Lucida Console", Monaco, monospace;'>
+			  <li><a href="accueil">Accueil</a></li>
+			  <li><a href="jeux_page1">Jeux</a></li>
+			  <li class="active"><a href="ajout_jeu">Ajouter</a></li>
+			  
+			   <li><a href="panier_jeux" style="margin-left: 630px;">Panier</a></li>
+			</ul>
+			<form class="navbar-form navbar-right">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Recherche">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" style="height: 34px;">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</div>
+				</div>
+			</form> 
+		  </div>
+		</nav> 
+		
+		<div class="img-nba"><img src="img/nba.png" class="img-responsive" alt="Cell" ></div>
+		<div class="rectangle-ajout"></div>
+
+		<div class="form-ajout">
+			<h1 class="form-ajout-text">Ajouter un nouveau jeu</h1><hr>
+			<form action="verif_ajout_jeu" method="post">
+				<div class="row">
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Nom du jeu</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Categorie</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="nom" placeholder="Ex: Fifa 18" required></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="genre" placeholder="Ex:Sport" required></div>
+				</div><br><br>
+				<div class="row">
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Editeur</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Date de sortie</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="editeur" placeholder="Ex: EA Sports" required></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="date-sortie" placeholder="Ex: 29/09/17" required></div>
+				</div><br><br>
+				<div class="row">
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Note</label></div>
+				<div class="col-xs-6"><label class="form-ajout-text" for="sel1">Prix</label></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="note" placeholder="Ex: 15.2" required></div>
+				<div class="col-xs-6"><input type="text" class="form-control" name="prix" placeholder="Ex: 64" required></div>
+				</div><br>
+				<label class="form-ajout-text" >Console</label>
+				<div class="checkbox">
+					<div class="row" style="margin-left: 0px;">
+						<label class="checkbox-ajout"><input type="checkbox" name="ps4" >PS4</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="xbox_one">XBOX ONE</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="switch">SWITCH</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="pc">PC</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="xbox_360">XBOX 360</label>
+						<label class="checkbox-ajout"><input type="checkbox" name="ps3">PS3</label>
+					</div>
+				</div><br>
+				<div class="row">
+					<div class="col-xs-12"><label class="form-ajout-text" for="sel1">Jaquette du jeu</label></div>
+				  	<div class="col-xs-12"><input type="text" class="form-control" name="img" placeholder="Ex: img/jaquette/fifa18.jpg" required></div>
+			 	 </div><br>
+				<button type="submit" class="btn btn-secondary btn-lg btn-block">Ajouter</button>
+			</form>
+		</div> 
+
+	</body>
+</html>
